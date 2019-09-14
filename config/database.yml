@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: chat_me_production
+  database: chat_me_development
   username: chat_me
   password: <%= ENV['CHAT_ME_DATABASE_PASSWORD'] %>
