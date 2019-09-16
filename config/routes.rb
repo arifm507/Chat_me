@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/new'
   root 'chatroom#index'
   resources :chatroom
   get 'login', to: 'sessions#new'
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   post 'message', to: 'messages#create'
 
+  get 'register', to: 'users#new'
+  post 'register', to: 'users#create'
 
   mount ActionCable.server, at: '/cable'
 
