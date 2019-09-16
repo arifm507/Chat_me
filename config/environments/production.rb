@@ -79,8 +79,9 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  config.action_cable.disable_request_forgery_protection = true
 
-  config.action_cable.allowed_request_origins = ['https://arif-chatme.herokuapp.com']
+  # config.action_cable.allowed_request_origins = ['https://arif-chatme.herokuapp.com']
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
