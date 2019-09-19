@@ -42,6 +42,12 @@ $(document).on('turbolinks:load',function() {
     	$(this).closest('.message').transition('fade');
   	});
 
+
+
+
+		$('.menu .item').tab();
+
+
   	submit_message();
   	scroll_bottom();
 

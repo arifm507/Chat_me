@@ -1,0 +1,16 @@
+
+<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="first">Edit Profile</a>
+  <%= link_to "Profile", user_path(current_user), class: "right item "%>
+
+</div>
+<div class="ui bottom attached tab segment active" data-tab="first">
+  <div class="ui items">
+  <div class="item" style="padding-top: 50px;">
+    <%= render 'form' %>
+  </div>
+</div>
+</div>
+
+
+

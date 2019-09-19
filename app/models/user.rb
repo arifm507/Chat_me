@@ -3,4 +3,5 @@ class User < ApplicationRecord
 	 length: { minimum: 3, maximum: 15}
 	has_secure_password
 	has_many :messages
+	has_one :user_detail
 end

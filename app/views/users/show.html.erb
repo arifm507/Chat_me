@@ -1,0 +1,44 @@
+<div class="ui top attached tabular menu">
+  <a class="item active" data-tab="first">Profile</a>
+  <a class="item" data-tab="second">Basic Details</a>
+  <a class="item" data-tab="third">About</a>
+  <%= link_to "<i class='edit icon'></i> Edit".html_safe, edit_user_path(current_user), class: "right item "%>
+
+
+</div>
+<div class="ui bottom attached tab segment active" data-tab="first">
+  <div class="ui items">
+    <% if user_details %>
+  <div class="item" style="padding-top: 50px;">
+    <a class="ui small circular image">
+      <img src="<%= asset_path 'pic.jpeg' %>">
+    </a>
+    <div class="content">
+      <a class="header">Name : <%= current_user.user_detail.name %></a><br><br>
+      <a class="header">Email : <%= current_user.user_detail.email %></a><br><br>
+      <a class="header">Contact : <%= current_user.user_detail.contact %></a><br><br>
+    </div>
+  </div>
+</div>
+</div>
+<div class="ui bottom attached tab segment" data-tab="second">
+  <div class="ui items">
+  <div class="item" style="padding-top: 40px;">
+    <div class="content">
+      <a class="header">Name : <%= current_user.user_detail.name %></a><br><br>
+      <a class="header">Contact : <%= current_user.user_detail.contact%></a><br><br>
+      <a class="header">Email : <%= current_user.user_detail.email %></a><br><br>
+      <a class="header">Gender : <%= current_user.user_detail.gender %></a><br><br>
+      <% if current_user.user_detail.dob %>
+      <a class="header">Date of Birth : <%= current_user.user_detail.dob.strftime("%d/%m/%y") %></a><br><br>
+      <% end %>
+      <a class="header">Employee At : <%= current_user.user_detail.company %></a><br><br>
+      <a class="header">Address : <%= current_user.user_detail.address %></a><br><br>
+    </div>
+  </div>
+</div>
+</div>
+<div class="ui bottom attached tab segment" data-tab="third">
+  <p class="header">About me : <%= current_user.user_detail.about %></p><br><br>
+</div>
+<% end %>
